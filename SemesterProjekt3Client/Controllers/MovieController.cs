@@ -23,9 +23,27 @@ namespace SemesterProjekt3Client.Controllers
             return savedOk;
         }
 
+        public async Task<bool> AddMovieCopyAsync(MovieCopy movieCopy)
+        {
+            bool savedOk = await mAccess.AddMovieCopy(movieCopy);
+            return savedOk;
+        }
+
+        public async Task<bool> UpdateMovieInfoAsync(MovieInfo movieInfo)
+        {
+            bool updated = await mAccess.UpdateMovieInfo(movieInfo);
+            return updated;
+        }
+
         public async Task<IEnumerable<MovieInfo>> GetAllMovieInfosAsync() {
             IEnumerable<MovieInfo> movies = await mAccess.GetAllMovieInfos();
             return movies;
+        }
+
+        public async Task<IEnumerable<MovieCopy>> GetAllMovieCopiesAsync()
+        {
+            IEnumerable<MovieCopy> moviesCopies = await mAccess.GetAllMovieCopies();
+            return moviesCopies;
         }
 
     }

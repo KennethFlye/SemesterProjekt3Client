@@ -80,8 +80,9 @@ namespace SemesterProjekt3Client
 
         public async void FillMovieListAsync()
         {
-            listBox1.Items.Clear();
+            
             dbMovies = await mController.GetAllMovieInfosAsync();
+            listBox1.Items.Clear();
 
             foreach (MovieInfo movie in dbMovies)
             {
@@ -91,9 +92,12 @@ namespace SemesterProjekt3Client
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            SpecificMovie specificMovieWindow = new SpecificMovie((MovieInfo)listBox1.SelectedItem);
-            specificMovieWindow.ShowDialog();
+            if(listBox1.SelectedItem != null)
+            {
+                SpecificMovie specificMovieWindow = new SpecificMovie((MovieInfo)listBox1.SelectedItem);
+                specificMovieWindow.ShowDialog();
+            }
+            
 
         }
 
