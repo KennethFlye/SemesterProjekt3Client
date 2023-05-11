@@ -3,6 +3,11 @@
     public class Showing
     {
 
+        public Showing() 
+        {
+            IsKidFriendly = false;
+        }
+  
         public int ShowingId { get; set; }
         public DateTime startTime { get; set; }
         public bool IsKidFriendly { get; set; }
