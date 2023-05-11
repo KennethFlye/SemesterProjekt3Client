@@ -1,4 +1,4 @@
-namespace SemesterProjekt3Web.Models
+namespace SemesterProjekt3Client.Model
 {
     public class ErrorViewModel
     {

@@ -1,10 +1,11 @@
-﻿namespace SemesterProjekt3Web.Models
+﻿namespace SemesterProjekt3Client.Model
 {
     public class MovieInfo
     {
         MovieInfo() { }
 
-        MovieInfo(int id, string title, int length, string genre, string pgRating, DateTime premiereDate) {
+        MovieInfo(int id, string title, int length, string genre, string pgRating, DateTime premiereDate)
+        {
             InfoId = id;
             Title = title;
             Length = length;
