@@ -1,5 +1,6 @@
 using Microsoft.VisualBasic.Devices;
 using SemesterProjekt3Client.Controllers;
+using SemesterProjekt3Client.GUI;
 using SemesterProjekt3Client.Model;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace SemesterProjekt3Client
 
         private async void btn_add_Click(object sender, EventArgs e)
         {
-            
+
             string displayMsg = "Udfyld venligst følgende felter korrekt:";
             string originalDisplayMsg = displayMsg;
 
@@ -38,7 +39,7 @@ namespace SemesterProjekt3Client
                 displayMsg += "\nGenre";
             }
 
-            if (string.IsNullOrWhiteSpace(textBox_PGRating.Text))
+            if (string.IsNullOrWhiteSpace(textBox_PGRating.Text) || !(Regex.IsMatch(textBox_PGRating.Text, @"^\d+$")))
             {
                 displayMsg += "\nAldersgrænse";
             }
@@ -91,7 +92,7 @@ namespace SemesterProjekt3Client
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            SpecificMovie specificMovieWindow = new SpecificMovie(listBox1.SelectedItem);
+            SpecificMovie specificMovieWindow = new SpecificMovie((MovieInfo)listBox1.SelectedItem);
             specificMovieWindow.ShowDialog();
 
         }

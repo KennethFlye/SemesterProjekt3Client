@@ -153,7 +153,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(421, 139);
+            label4.Location = new Point(425, 135);
             label4.Name = "label4";
             label4.Size = new Size(155, 19);
             label4.TabIndex = 13;
@@ -163,7 +163,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(531, 190);
+            label5.Location = new Point(531, 186);
             label5.Name = "label5";
             label5.Size = new Size(49, 19);
             label5.TabIndex = 14;
@@ -173,11 +173,11 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(484, 243);
+            label6.Location = new Point(450, 239);
             label6.Name = "label6";
-            label6.Size = new Size(96, 19);
+            label6.Size = new Size(130, 19);
             label6.TabIndex = 15;
-            label6.Text = "Aldersgrænse:";
+            label6.Text = "Aldersgrænse (i tal):";
             // 
             // label7
             // 
