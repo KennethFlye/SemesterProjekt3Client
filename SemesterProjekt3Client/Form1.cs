@@ -14,7 +14,7 @@ namespace SemesterProjekt3Client
         {
             FileInfo fileInfo = new FileInfo(System.AppDomain.CurrentDomain.BaseDirectory);
             DirectoryInfo baseDir = fileInfo.Directory.Parent.Parent.Parent;
-            string path = baseDir.FullName + "\\Images\\tetris-movie-v0-nxkmsyiumera1.png";
+            string path = baseDir.FullName + "\\lib\\Images\\tetris-movie-v0-nxkmsyiumera1.png";
 
             pictureBoxFrontImage.LoadAsync(path);
             lblTitle.Text = "Vestbjerg Biograf Administratorsystem";
