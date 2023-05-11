@@ -1,3 +1,6 @@
+using Microsoft.VisualBasic.Devices;
+using SemesterProjekt3Client.Controllers;
+using SemesterProjekt3Client.Model;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -5,14 +8,18 @@ namespace SemesterProjekt3Client
 {
     public partial class Movies : Form
     {
+        MovieController mController;
+        IEnumerable<MovieInfo> dbMovies;
         public Movies()
         {
             InitializeComponent();
-            FillMovieList();
+            mController = new MovieController();
+            FillMovieListAsync();
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private async void btn_add_Click(object sender, EventArgs e)
         {
+            
             string displayMsg = "Udfyld venligst følgende felter korrekt:";
             string originalDisplayMsg = displayMsg;
 
@@ -48,31 +55,51 @@ namespace SemesterProjekt3Client
             else
             {
                 string title = textBox_Title.Text;
-                string length = textBox_Length.Text;
+                int length = Int32.Parse(textBox_Length.Text);
                 string genre = textBox_Genre.Text;
                 string pgRating = textBox_PGRating.Text;
                 DateTime releaseDate = dateTimePicker1.Value;
                 string imagePath = textBox_ImagePath.Text;
-                //Metode her der tilføjer filmen til databasen
 
+                MovieInfo newMovie = new MovieInfo(0, title, length, genre, pgRating, releaseDate, true, imagePath);
+                bool savedOk = await mController.AddMovieInfoAsync(newMovie);
+                if (savedOk)
+                {
+                    FillMovieListAsync();
+                    MessageBox.Show("Movie was succesfully uploaded to database");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong, movie was not added to database");
+                }
 
             }
 
         }
 
-        public void FillMovieList()
+        public async void FillMovieListAsync()
         {
-            listBox1.Items.Add("Heyoo");
-            listBox1.Items.Add("LMAOO");
-            listBox1.Items.Add("GGGG");
-            //Metode her der fylder listen med film i databasen
+            listBox1.Items.Clear();
+            dbMovies = await mController.GetAllMovieInfosAsync();
+
+            foreach (MovieInfo movie in dbMovies)
+            {
+                listBox1.Items.Add(movie);
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show((string)listBox1.SelectedItem);
 
-            //Metode her der kalder det valgte elements vindue
+            SpecificMovie specificMovieWindow = new SpecificMovie(listBox1.SelectedItem);
+            specificMovieWindow.ShowDialog();
+
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+
         }
     }
 }

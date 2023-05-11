@@ -66,6 +66,7 @@
             btn_back.TabIndex = 1;
             btn_back.Text = "Tilbage";
             btn_back.UseVisualStyleBackColor = true;
+            btn_back.Click += btn_back_Click;
             // 
             // btn_add
             // 

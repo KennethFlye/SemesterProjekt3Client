@@ -1,4 +1,5 @@
 ﻿using SemesterProjekt3Client.ApiAccess;
+using SemesterProjekt3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,20 @@ namespace SemesterProjekt3Client.Controllers
     {
         MovieAccess mAccess;
 
-        MovieController()
+         public MovieController()
         {
             mAccess = new MovieAccess();
+        }
+
+        public async Task<bool> AddMovieInfoAsync(MovieInfo movie)
+        {
+            bool savedOk = await mAccess.AddMovieInfo(movie);
+            return savedOk;
+        }
+
+        public async Task<IEnumerable<MovieInfo>> GetAllMovieInfosAsync() {
+            IEnumerable<MovieInfo> movies = await mAccess.GetAllMovieInfos();
+            return movies;
         }
 
     }
