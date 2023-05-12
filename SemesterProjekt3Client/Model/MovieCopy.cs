@@ -9,5 +9,10 @@
         public double Price { get; set; }
         public MovieInfo MovieType { get; set; }
 
+        
+        public string ToString()
+        {
+            return $"{MovieType.Title} Language: {Language} 3D: {Is3D}";
+        }
     }
 }

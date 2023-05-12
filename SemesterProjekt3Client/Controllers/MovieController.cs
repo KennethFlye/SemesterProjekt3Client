@@ -27,6 +27,7 @@ namespace SemesterProjekt3Client.Controllers
             catch (Exception)
             {
                 movies = null;
+                Console.WriteLine("ctr fejl");
             }
             return movies;
         }
