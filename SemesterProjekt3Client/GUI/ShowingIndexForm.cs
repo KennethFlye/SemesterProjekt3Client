@@ -18,36 +18,33 @@ namespace SemesterProjekt3Client
             
             _showingCtrl = new ShowingController();
             _movieCtrl = new MovieController();
-            
-            
-            var mTemplist = _movieCtrl.GetMoviesCopy();
-            _movieList = mTemplist.GetAwaiter().GetResult();
-            foreach (var i in _movieList) 
-            {
-                movieComboBox.Items.Add(i);
-            }
+
+
+            AddMoviesCopy();
             //var rTemplist = _showRoomCtrl.GetShowRooms();
             //_roomList = rTemplist.GetAwaiter().GetResult();
             //foreach (var i in _roomList)
             //{
             //    _roomList.Items.Add(i);
             //}
-
-
-
         }
 
       
-
+        public async void AddMoviesCopy()
+        {
+            _movieList = await _movieCtrl.GetMoviesCopy();
+            foreach (var i in _movieList)
+            {
+                movieComboBox.Items.Add(i);
+            }
+        }
 
 
        
 
-        private void getButton_Click(object sender, EventArgs e)
+        private async void getButton_Click(object sender, EventArgs e)
         {
-            var templist = _showingCtrl.GetShowings();
-         
-            _showingList = templist.GetAwaiter().GetResult();
+            _showingList = await _showingCtrl.GetShowings();
 
             // MessageBox.Show("" + allProducts.Count());
             showingListBox.Items.Clear();
