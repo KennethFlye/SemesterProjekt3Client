@@ -165,8 +165,8 @@ namespace SemesterProjekt3Client.GUI
         {
             if (listBox1.SelectedItem != null)
             {
-                //SpecificMovieCopy specificMovieCopyWindow = new SpecificMovieCopy((MovieCopy)listBox1.SelectedItem);
-                //specificMovieCopyWindow.ShowDialog();
+                SpecificMovieCopy specificMovieCopyWindow = new SpecificMovieCopy((MovieCopy)listBox1.SelectedItem);
+                specificMovieCopyWindow.ShowDialog();
             }
         }
 
