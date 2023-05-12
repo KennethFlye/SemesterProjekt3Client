@@ -96,6 +96,32 @@ namespace SemesterProjekt3Client.ApiAccess
             return updated;
         }
 
+        public async Task<bool> UpdateMovieCopy(MovieCopy movieCopy)
+        {
+            bool updated = false;
+            string url = baseUrl + $"/copies";
+            Uri uri = new Uri(string.Format(url));
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(movieCopy);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var patchResponse = await client.PatchAsync(uri, content);
+                Console.WriteLine(patchResponse.StatusCode);
+
+                if (patchResponse != null && patchResponse.IsSuccessStatusCode)
+                {
+                    updated = true;
+                }
+            }
+            catch
+            {
+                updated = false;
+            }
+            Console.WriteLine(updated);
+            return updated;
+        }
+
         public async Task<IEnumerable<MovieInfo>> GetAllMovieInfos()
         {
             List<MovieInfo> movieInfos;

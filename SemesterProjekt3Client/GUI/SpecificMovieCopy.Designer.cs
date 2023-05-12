@@ -36,9 +36,11 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            textBox_updateMovieCopyLanguage = new TextBox();
+            textBox_updateMovieCopyPrice = new TextBox();
+            btn_back = new Button();
+            btn_update = new Button();
+            checkBox_updateIs3D = new CheckBox();
             SuspendLayout();
             // 
             // label1
@@ -94,59 +96,83 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(389, 109);
+            label6.Location = new Point(368, 109);
             label6.Name = "label6";
-            label6.Size = new Size(41, 15);
+            label6.Size = new Size(62, 15);
             label6.TabIndex = 5;
-            label6.Text = "Sprog:";
+            label6.Text = "Nyt sprog:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(406, 148);
+            label7.Location = new Point(388, 148);
             label7.Name = "label7";
-            label7.Size = new Size(24, 15);
+            label7.Size = new Size(42, 15);
             label7.TabIndex = 6;
-            label7.Text = "3D:";
+            label7.Text = "Ny 3D:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(401, 186);
+            label8.Location = new Point(310, 186);
             label8.Name = "label8";
-            label8.Size = new Size(29, 15);
+            label8.Size = new Size(120, 15);
             label8.TabIndex = 7;
-            label8.Text = "Pris:";
+            label8.Text = "Ny pris (Kun hele tal):";
             // 
-            // textBox1
+            // textBox_updateMovieCopyLanguage
             // 
-            textBox1.Location = new Point(436, 106);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 8;
+            textBox_updateMovieCopyLanguage.Location = new Point(436, 106);
+            textBox_updateMovieCopyLanguage.Name = "textBox_updateMovieCopyLanguage";
+            textBox_updateMovieCopyLanguage.Size = new Size(100, 23);
+            textBox_updateMovieCopyLanguage.TabIndex = 8;
             // 
-            // textBox2
+            // textBox_updateMovieCopyPrice
             // 
-            textBox2.Location = new Point(436, 145);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 9;
+            textBox_updateMovieCopyPrice.Location = new Point(436, 183);
+            textBox_updateMovieCopyPrice.Name = "textBox_updateMovieCopyPrice";
+            textBox_updateMovieCopyPrice.Size = new Size(100, 23);
+            textBox_updateMovieCopyPrice.TabIndex = 10;
             // 
-            // textBox3
+            // btn_back
             // 
-            textBox3.Location = new Point(436, 183);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 10;
+            btn_back.Location = new Point(12, 277);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(87, 31);
+            btn_back.TabIndex = 11;
+            btn_back.Text = "Tilbage";
+            btn_back.UseVisualStyleBackColor = true;
+            btn_back.Click += btn_back_Click;
+            // 
+            // btn_update
+            // 
+            btn_update.Location = new Point(436, 224);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(83, 32);
+            btn_update.TabIndex = 12;
+            btn_update.Text = "Opdater";
+            btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
+            // 
+            // checkBox_updateIs3D
+            // 
+            checkBox_updateIs3D.AutoSize = true;
+            checkBox_updateIs3D.Location = new Point(436, 147);
+            checkBox_updateIs3D.Name = "checkBox_updateIs3D";
+            checkBox_updateIs3D.Size = new Size(15, 14);
+            checkBox_updateIs3D.TabIndex = 13;
+            checkBox_updateIs3D.UseVisualStyleBackColor = true;
             // 
             // SpecificMovieCopy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(695, 320);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(checkBox_updateIs3D);
+            Controls.Add(btn_update);
+            Controls.Add(btn_back);
+            Controls.Add(textBox_updateMovieCopyPrice);
+            Controls.Add(textBox_updateMovieCopyLanguage);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -171,8 +197,10 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBox_updateMovieCopyLanguage;
+        private TextBox textBox_updateMovieCopyPrice;
+        private Button btn_back;
+        private Button btn_update;
+        private CheckBox checkBox_updateIs3D;
     }
 }

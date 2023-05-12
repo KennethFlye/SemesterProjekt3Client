@@ -90,7 +90,8 @@
             // 
             label_movieTitle.AutoSize = true;
             label_movieTitle.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label_movieTitle.Location = new Point(16, 88);
+            label_movieTitle.Location = new Point(16, 68);
+            label_movieTitle.MaximumSize = new Size(250, 0);
             label_movieTitle.Name = "label_movieTitle";
             label_movieTitle.Size = new Size(64, 19);
             label_movieTitle.TabIndex = 2;
@@ -100,7 +101,7 @@
             // 
             label_movieLength.AutoSize = true;
             label_movieLength.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label_movieLength.Location = new Point(16, 115);
+            label_movieLength.Location = new Point(16, 109);
             label_movieLength.Name = "label_movieLength";
             label_movieLength.Size = new Size(87, 19);
             label_movieLength.TabIndex = 3;
@@ -110,7 +111,7 @@
             // 
             label_movieGenre.AutoSize = true;
             label_movieGenre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label_movieGenre.Location = new Point(16, 144);
+            label_movieGenre.Location = new Point(16, 137);
             label_movieGenre.Name = "label_movieGenre";
             label_movieGenre.Size = new Size(53, 19);
             label_movieGenre.TabIndex = 4;
@@ -120,7 +121,7 @@
             // 
             label_moviePGRating.AutoSize = true;
             label_moviePGRating.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label_moviePGRating.Location = new Point(16, 172);
+            label_moviePGRating.Location = new Point(16, 165);
             label_moviePGRating.Name = "label_moviePGRating";
             label_moviePGRating.Size = new Size(100, 19);
             label_moviePGRating.TabIndex = 5;
@@ -140,7 +141,8 @@
             // 
             label_movieImagePath.AutoSize = true;
             label_movieImagePath.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label_movieImagePath.Location = new Point(16, 232);
+            label_movieImagePath.Location = new Point(16, 264);
+            label_movieImagePath.MaximumSize = new Size(230, 0);
             label_movieImagePath.Name = "label_movieImagePath";
             label_movieImagePath.Size = new Size(86, 19);
             label_movieImagePath.TabIndex = 7;
@@ -150,7 +152,7 @@
             // 
             label_movieCurrentlyShowing.AutoSize = true;
             label_movieCurrentlyShowing.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label_movieCurrentlyShowing.Location = new Point(16, 261);
+            label_movieCurrentlyShowing.Location = new Point(16, 232);
             label_movieCurrentlyShowing.Name = "label_movieCurrentlyShowing";
             label_movieCurrentlyShowing.Size = new Size(94, 19);
             label_movieCurrentlyShowing.TabIndex = 8;
@@ -359,11 +361,11 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(521, 161);
+            label15.Location = new Point(461, 164);
             label15.Name = "label15";
-            label15.Size = new Size(29, 15);
+            label15.Size = new Size(102, 15);
             label15.TabIndex = 32;
-            label15.Text = "Pris:";
+            label15.Text = "Pris (Kun hele tal):";
             // 
             // textBox_filmCopyLanguage
             // 
