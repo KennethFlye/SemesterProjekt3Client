@@ -43,6 +43,7 @@
             this.btnMovies.TabIndex = 0;
             this.btnMovies.Text = "Movies";
             this.btnMovies.UseVisualStyleBackColor = true;
+            this.btnMovies.Click += new System.EventHandler(this.btnMovies_Click);
             // 
             // pictureBoxFrontImage
             // 
@@ -72,6 +73,7 @@
             this.btnShowings.TabIndex = 3;
             this.btnShowings.Text = "Showings";
             this.btnShowings.UseVisualStyleBackColor = true;
+            this.btnShowings.Click += new System.EventHandler(this.btnShowings_Click);
             // 
             // Form1
             // 

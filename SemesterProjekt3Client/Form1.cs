@@ -30,6 +30,17 @@ namespace SemesterProjekt3Client
             {
                 MessageBox.Show("Shortcut to button 1");
             }
-        }        
+        }
+
+        private void btnMovies_Click(object sender, EventArgs e)
+        {
+            Movies m = new Movies();
+            m.Show();
+        }
+
+        private void btnShowings_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
