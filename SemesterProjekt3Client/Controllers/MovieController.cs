@@ -12,9 +12,19 @@ namespace SemesterProjekt3Client.Controllers
     {
         MovieAccess mAccess;
 
+        public MovieController()
          public MovieController()
         {
             mAccess = new MovieAccess();
+        }
+        public async Task<IEnumerable<MovieCopy>> GetMoviesCopy()
+        {
+            IEnumerable<MovieCopy> movies;
+
+                movies = await mAccess.GetMoviesCopies();
+            
+        
+            return movies;
         }
 
         public async Task<bool> AddMovieInfoAsync(MovieInfo movie)
