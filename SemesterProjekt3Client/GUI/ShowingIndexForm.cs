@@ -20,7 +20,7 @@ namespace SemesterProjekt3Client
             _showingCtrl = new ShowingController();
             _movieCtrl = new MovieController();
 
-
+            FillLists();
 
             //var rTemplist = _showRoomCtrl.GetShowRooms();
             //_roomList = rTemplist.GetAwaiter().GetResult();
@@ -33,25 +33,23 @@ namespace SemesterProjekt3Client
 
 
 
-
-
-
-        private async void getButton_Click(object sender, EventArgs e)
+        private async Task FillLists()
         {
             await UpdateMovieComboBox();
             //UpdateRoomComboBox();
             await UpdateShowingList();
-
         }
+
+
+        private async void getButton_Click(object sender, EventArgs e)
+        {
+            FillLists();
+        }
+
         public async Task UpdateShowingList()
         {
-
             _showingList = await _showingCtrl.GetShowings();
-
-            // MessageBox.Show("" + allProducts.Count());
-
-            if (_showingList.Count() < 1)
-
+            if (_showingList.Count() > 0)
             {
                 showingsList.Items.Clear();
                 foreach (Showing? i in _showingList)
@@ -59,14 +57,6 @@ namespace SemesterProjekt3Client
 
                     showingsList.Items.Add(i.ToString());
                 }
-              
-
-               
-
-            }
-            else
-            {
-                Console.WriteLine("dumt");
             }
 
 
@@ -87,12 +77,10 @@ namespace SemesterProjekt3Client
         }
         public async Task UpdateMovieComboBox()
         {
-
             _movieList = await _movieCtrl.GetMoviesCopy();
-            movieComboBox.Items.Add(_movieList);
-            if (_movieList.Count() < 1)
+            if (_movieList.Count() > 0)
             {
-                showingsList.Items.Clear();
+                movieComboBox.Items.Clear();
                 foreach (var i in _movieList)
                 {
                     movieComboBox.Items.Add(i.ToString());
@@ -101,20 +89,6 @@ namespace SemesterProjekt3Client
 
         }
 
-        private void showingListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ShowingIndexForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         //public async void UpdateRoomComboBox()
         //{
         //    _roomList = await _roomCtrl.GetMoviesCopy();
