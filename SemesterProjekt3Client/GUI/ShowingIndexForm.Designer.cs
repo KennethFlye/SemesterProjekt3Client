@@ -31,7 +31,7 @@ namespace SemesterProjekt3Client
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.titleLabel = new System.Windows.Forms.Label();
             this.showingsList = new System.Windows.Forms.ListView();
             this.Film = new System.Windows.Forms.ColumnHeader();
@@ -44,9 +44,9 @@ namespace SemesterProjekt3Client
             this.movieLabel = new System.Windows.Forms.Label();
             this.ShowRoomLabel = new System.Windows.Forms.Label();
             this.getButton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.StopLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -65,7 +65,7 @@ namespace SemesterProjekt3Client
             this.Sal,
             this.Tid});
             this.showingsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.showingsList.Location = new System.Drawing.Point(46, 105);
             this.showingsList.Name = "showingsList";
             this.showingsList.Size = new System.Drawing.Size(530, 411);
@@ -142,14 +142,14 @@ namespace SemesterProjekt3Client
             this.getButton.UseVisualStyleBackColor = true;
             this.getButton.Click += new System.EventHandler(this.getButton_Click);
             // 
-            // dateTimePicker1
+            // timePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(758, 198);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 31);
-            this.dateTimePicker1.TabIndex = 12;
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePicker.Location = new System.Drawing.Point(758, 198);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(128, 31);
+            this.timePicker.TabIndex = 12;
             // 
             // StopLabel
             // 
@@ -160,14 +160,21 @@ namespace SemesterProjekt3Client
             this.StopLabel.TabIndex = 13;
             this.StopLabel.Text = "Lad vær med det";
             // 
+            // datePicker
+            // 
+            this.datePicker.Location = new System.Drawing.Point(611, 198);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(133, 31);
+            this.datePicker.TabIndex = 0;
+            // 
             // ShowingIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 605);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.StopLabel);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.timePicker);
             this.Controls.Add(this.getButton);
             this.Controls.Add(this.ShowRoomLabel);
             this.Controls.Add(this.movieLabel);
@@ -198,9 +205,9 @@ namespace SemesterProjekt3Client
         private Label movieLabel;
         private Label ShowRoomLabel;
         private Button getButton;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker timePicker;
         private Label StopLabel;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker datePicker;
     }
 }
     

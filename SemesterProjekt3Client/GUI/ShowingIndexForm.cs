@@ -1,5 +1,6 @@
 using SemesterProjekt3Client.Controllers;
 using SemesterProjekt3Client.Model;
+using System.Text.RegularExpressions;
 
 namespace SemesterProjekt3Client
 {
@@ -50,7 +51,7 @@ namespace SemesterProjekt3Client
 
         public async Task UpdateShowingList()
         {
-            _showingList = await _showingCtrl.GetShowings();
+            _showingList = await _showingCtrl.GetShowingsAsync();
             if (_showingList.Count() > 0)
             {
 
@@ -61,23 +62,53 @@ namespace SemesterProjekt3Client
                     showingsList.Items.Add(i.ToString());
                 }
             }
+        }
 
 
+        private void createButton_Click(object sender, EventArgs e)
 
-        //private void createButton_Click(object sender, EventArgs e)
-        //{
-        //    Showing show = new();
-        //    show.MovieCopy = movieComboBox.Text;
-        //    show.ShowRoom = ShowRoomComboBox.Text;
-        //    show.startTime = dateTimePicker1.Text;
-        //    if(kidCheckBox.Checked)
-        //    {
-        //        show.IsKidFriendly = true;
-        //    }
-        //    _showingCtrl.CreateShowing(show);
+        {
+
+            string displayMsg = "Udfyld venligst følgende felter korrekt:";
+            string originalDisplayMsg = displayMsg;
+
+            if (string.IsNullOrWhiteSpace(movieComboBox.Text))
+            {
+                displayMsg += "\nFilm";
+            }
+
+            if (string.IsNullOrWhiteSpace(ShowRoomComboBox.Text))
+            {
+                displayMsg += "\nSal";
+            }
+
+            if (!displayMsg.Equals(originalDisplayMsg))
+            {
+                MessageBox.Show(displayMsg);
+            }
+            else
+            {
 
 
-            //}
+                DateTime starttime;
+                DateTime date = datePicker.Value;
+                DateTime time = timePicker.Value;
+                starttime.Date = date;
+                
+                
+
+                Showing newShow = new Showing(0, title, length, genre, pgRating, releaseDate, true, imagePath);
+                bool savedOk = await mController.AddMovieInfoAsync(newMovie);
+                if (savedOk)
+                {
+                    FillMovieListAsync();
+                    MessageBox.Show("Movie was succesfully uploaded to database");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong, movie was not added to database");
+                }
+            }
         }
         public async Task UpdateMovieComboBox()
         {
