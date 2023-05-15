@@ -36,14 +36,14 @@ namespace SemesterProjekt3Client
 
 
 
-        private void getButton_Click(object sender, EventArgs e)
+        private async void getButton_Click(object sender, EventArgs e)
         {
-            UpdateMovieComboBox();
+            await UpdateMovieComboBox();
             //UpdateRoomComboBox();
-            UpdateShowingList();
+            await UpdateShowingList();
 
         }
-        public async void UpdateShowingList()
+        public async Task UpdateShowingList()
         {
 
             _showingList = await _showingCtrl.GetShowings();
@@ -85,7 +85,7 @@ namespace SemesterProjekt3Client
 
             //}
         }
-        public async void UpdateMovieComboBox()
+        public async Task UpdateMovieComboBox()
         {
 
             _movieList = await _movieCtrl.GetMoviesCopy();
