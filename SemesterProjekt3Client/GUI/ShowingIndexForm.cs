@@ -65,10 +65,11 @@ namespace SemesterProjekt3Client
         }
 
 
-        private void createButton_Click(object sender, EventArgs e)
+        private async void createButton_Click(object sender, EventArgs e)
 
         {
 
+            titleLabel.Text = "start";
             string displayMsg = "Udfyld venligst følgende felter korrekt:";
             string originalDisplayMsg = displayMsg;
 
@@ -84,31 +85,42 @@ namespace SemesterProjekt3Client
 
             if (!displayMsg.Equals(originalDisplayMsg))
             {
-                MessageBox.Show(displayMsg);
+                titleLabel.Text = displayMsg;
             }
             else
             {
 
 
-                DateTime starttime;
+
                 DateTime date = datePicker.Value;
                 DateTime time = timePicker.Value;
-                starttime.Date = date;
-                ShowRoom room = _roomCtrl
-                MovieCopy movie = _movieCtrl.
-                
-                
+                DateTime starttime = new DateTime(date.Year, date.Month, date.Month, time.Hour, time.Minute, time.Second);
 
-                Showing newShow = new Showing(0, title, length, genre, pgRating, releaseDate, true, imagePath);
-                bool savedOk = await mController.AddMovieInfoAsync(newMovie);
+                int rId = ShowRoomComboBox.SelectedItem.ToString().First();
+                ShowRoom room = await _roomCtrl.GetShowRoomById(rId);
+
+                int mId = movieComboBox.SelectedItem.ToString().First();
+                MovieCopy movie =  await _movieCtrl.GetMovieCopy(mId);
+                
+                bool kid = false;
+                if (kidCheckBox.Checked)
+                {
+                    kid = true;
+                }
+
+
+
+                Showing newShow = new Showing(starttime, kid, room, movie);
+                bool savedOk = await _showingCtrl.CreateShowing(newShow);
                 if (savedOk)
                 {
-                    FillMovieListAsync();
-                    MessageBox.Show("Movie was succesfully uploaded to database");
+                    
+                    titleLabel.Text = "Shauning was succesfully uploaded to database" + room.RoomNumber;
+
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong, movie was not added to database");
+                    titleLabel.Text = "Something went wrong, thw show was not added to database";
                 }
             }
         }
@@ -120,7 +132,7 @@ namespace SemesterProjekt3Client
                 movieComboBox.Items.Clear();
                 foreach (var i in _movieList)
                 {
-                    movieComboBox.Items.Add(i.ToString());
+                    movieComboBox.Items.Add(i.CopyId);
                 }
             }
 

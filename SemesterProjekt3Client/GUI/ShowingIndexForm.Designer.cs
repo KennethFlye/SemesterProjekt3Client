@@ -81,6 +81,7 @@ namespace SemesterProjekt3Client
             this.createButton.TabIndex = 3;
             this.createButton.Text = "Opret [Showing]\r\n";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // movieComboBox
             // 

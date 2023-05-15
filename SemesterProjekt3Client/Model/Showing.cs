@@ -3,7 +3,12 @@
     public class Showing
     {
 
-        public Showing() 
+        
+        public Showing()
+        {
+
+        }
+        public Showing(DateTime datetime, bool IsKidFriendly,ShowRoom room,MovieCopy copy ) 
         {
             IsKidFriendly = false;
         }

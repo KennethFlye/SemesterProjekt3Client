@@ -43,5 +43,30 @@ namespace SemesterProjekt3Client.ApiAccess
             }
             return rooms;
         }
+        public async Task<ShowRoom> GetShowRoomById(int id)
+        {
+            ShowRoom room;
+            string url = baseUrl + $"/{id}";
+            Uri uri = new Uri(string.Format(url));
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    room = JsonConvert.DeserializeObject<ShowRoom>(content);
+                }
+                else
+                {
+                    room = null;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return room;
+        }
     }
 }

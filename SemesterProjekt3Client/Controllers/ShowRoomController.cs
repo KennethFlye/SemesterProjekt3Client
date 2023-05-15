@@ -24,5 +24,13 @@ namespace SemesterProjekt3Client.Controllers
            
             return rooms;
         }
+
+        public async Task<ShowRoom> GetShowRoomById(int id)
+        {
+            ShowRoom room;
+            room = await rAccess.GetShowRoomById(id);
+            return room;
+
+        }
     }
 }
