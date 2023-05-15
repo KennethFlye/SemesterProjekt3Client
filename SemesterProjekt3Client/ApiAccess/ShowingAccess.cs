@@ -40,7 +40,7 @@ namespace SemesterProjekt3Client.ApiAccess
             Console.WriteLine(savedOk);
             return savedOk;
         }
-        public async Task<IEnumerable<Showing>> GetShowings()
+        public async Task<IEnumerable<Showing>> GetShowingsAsync()
         {
             List<Showing> show;
             var uri = new Uri(baseUrl);

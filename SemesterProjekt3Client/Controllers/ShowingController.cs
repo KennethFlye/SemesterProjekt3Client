@@ -1,10 +1,5 @@
 ﻿using SemesterProjekt3Client.ApiAccess;
 using SemesterProjekt3Client.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SemesterProjekt3Client.Controllers
 {
@@ -12,54 +7,37 @@ namespace SemesterProjekt3Client.Controllers
     {
         ShowingAccess api;
 
-        
-       public ShowingController()
+
+        public ShowingController()
         {
             api = new ShowingAccess();
         }
 
         public async Task<bool> CreateShowing(Showing show)
         {
-            bool saved;
-            try
-            {
-                saved = await api.CreateShowing(show);
-            }
-            catch (Exception)
-            {
-                saved = false;
-            }
+            
+
+           bool saved = await api.CreateShowing(show);
+
 
             return saved;
         }
 
-        public async Task<IEnumerable<Showing>> GetShowings()
+        public async Task<IEnumerable<Showing>> GetShowingsAsync()
         {
-            IEnumerable<Showing> showings;
+            IEnumerable<Showing> showings = await api.GetShowingsAsync();
 
-            try
-            {
-                showings = await api.GetShowings();
-            }
-            catch (Exception)
-            {
-                showings = null;
-            }
+
+           
+
 
             return showings;
         }
         public async Task<Showing> GetShowingById(int id)
         {
-            Showing show;
+         
+            Showing show = await api.GetShowingById(id);
 
-            try
-            {
-                show = await api.GetShowingById(id);
-            }
-            catch (Exception)
-            {
-                show = null;
-            }
             return show;
         }
 

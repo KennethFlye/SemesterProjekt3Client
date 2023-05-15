@@ -20,15 +20,9 @@ namespace SemesterProjekt3Client.Controllers
         {
             IEnumerable<MovieCopy> movies;
 
-            try
-            {
                 movies = await mAccess.GetMoviesCopies();
-            }
-            catch (Exception)
-            {
-                movies = null;
-                Console.WriteLine("ctr fejl");
-            }
+            
+        
             return movies;
         }
     }

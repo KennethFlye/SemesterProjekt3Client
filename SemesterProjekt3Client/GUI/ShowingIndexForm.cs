@@ -20,6 +20,13 @@ namespace SemesterProjekt3Client
 
             _showingCtrl = new ShowingController();
             _movieCtrl = new MovieController();
+            _roomCtrl = new ShowRoomController();
+
+            getLists();
+
+            UpdateMovieComboBox(_movieList);
+            //UpdateRoomComboBox();
+            UpdateShowingList(_showingList);
 
 
 
@@ -39,85 +46,91 @@ namespace SemesterProjekt3Client
 
         private void getButton_Click(object sender, EventArgs e)
         {
-            UpdateMovieComboBox();
-            UpdateRoomComboBox();
-            UpdateShowingList();
+            UpdateShowingList(_showingList);
+            UpdateMovieComboBox(_movieList);
+            //UpdateRoomComboBox();
+         
 
         }
-        public async void UpdateShowingList()
+        public async void UpdateShowingList(IEnumerable<Showing> list)
         {
 
-            _showingList = await _showingCtrl.GetShowings();
+           // _showingList = await _showingCtrl.GetShowingsAsync();
 
-            // MessageBox.Show("" + allProducts.Count());
 
-            if (_showingList.Count() < 1)
 
+            if (_showingList.Count() > 0 && _movieList != null)
             {
+
                 showingsList.Items.Clear();
                 foreach (Showing? i in _showingList)
                 {
 
                     showingsList.Items.Add(i.ToString());
                 }
-              
-
-               
-
-            }
-            else
-            {
-                Console.WriteLine("dumt");
             }
 
 
-            //private void createButton_Click(object sender, EventArgs e)
-            //{
-            //    Showing show = new();
-            //    show.MovieCopy = movieComboBox.Text;
-            //    show.ShowRoom = ShowRoomComboBox.Text;
-            //    show.startTime = dateTimePicker1.Text;
-            //    if(kidCheckBox.Checked)
-            //    {
-            //        show.IsKidFriendly = true;
-            //    }
-            //    _showingCtrl.CreateShowing(show);
 
-
-            //}
         }
-        public async void UpdateMovieComboBox()
-        {
 
-            _movieList = await _movieCtrl.GetMoviesCopy();
-            movieComboBox.Items.Add(_movieList);
-            if (_movieList.Count() < 1)
+
+
+        //private void createButton_Click(object sender, EventArgs e)
+        //{
+        //    Showing show = new();
+        //    show.MovieCopy = movieComboBox.Text;
+        //    show.ShowRoom = ShowRoomComboBox.Text;
+        //    show.startTime = dateTimePicker1.Text;
+        //    if(kidCheckBox.Checked)
+        //    {
+        //        show.IsKidFriendly = true;
+        //    }
+        //    _showingCtrl.CreateShowing(show);
+
+
+        //}
+    
+    public  void UpdateMovieComboBox(IEnumerable<MovieCopy> list)
+    {
+
+        //_movieList = await list.GetMoviesCopy();
+
+            if (list.Count() > 0 && list != null)
             {
-                showingsList.Items.Clear();
-                foreach (var i in _movieList)
+
+                movieComboBox.Items.Clear();
+
+                foreach (var i in list)
                 {
                     movieComboBox.Items.Add(i.ToString());
                 }
             }
 
-        }
-
-       
-
-        
-        public async void UpdateRoomComboBox()
-        {
-            _roomList = await _roomCtrl.GetShowRooms();
-            ShowRoomComboBox.Items.Clear();
-            if (_roomList.Count() < 1)
-            {
-                foreach (var i in _roomList)
-                {
-                    ShowRoomComboBox.Items.Add(i.RoomNumber);
-                }
-            }
-        }
-
-      
     }
+
+    public  async void getLists()
+        {
+            _showingList  = await _showingCtrl.GetShowingsAsync();
+            _movieList = await _movieCtrl.GetMoviesCopy();
+            
+        }
+
+
+
+    //public async void UpdateRoomComboBox()
+    //{
+    //    _roomList = await _roomCtrl.GetShowRooms();
+    //    ShowRoomComboBox.Items.Clear();
+        
+
+    //    foreach (var i in _roomList)
+    //    {
+    //        ShowRoomComboBox.Items.Add(i.RoomNumber);
+    //    }
+
+    //}
+
+
+}
 }
