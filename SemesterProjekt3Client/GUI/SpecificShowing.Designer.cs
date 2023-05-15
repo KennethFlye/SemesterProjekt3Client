@@ -28,137 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.textBoxShowingId = new System.Windows.Forms.TextBox();
-            this.labelID = new System.Windows.Forms.Label();
-            this.labelStartTime = new System.Windows.Forms.Label();
-            this.labelIsKidFriendly = new System.Windows.Forms.Label();
-            this.labelShowRoom = new System.Windows.Forms.Label();
-            this.labelMovieCopy = new System.Windows.Forms.Label();
-            this.checkBoxIsKidFriendly = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxMovieCopy = new System.Windows.Forms.ComboBox();
-            this.comboBoxShowRoom = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
+            btnUpdate = new Button();
+            textBoxShowingId = new TextBox();
+            labelID = new Label();
+            labelStartTime = new Label();
+            labelIsKidFriendly = new Label();
+            labelShowRoom = new Label();
+            labelMovieCopy = new Label();
+            checkBoxIsKidFriendly = new CheckBox();
+            dateTimePicker1 = new DateTimePicker();
+            comboBoxMovieCopy = new ComboBox();
+            comboBoxShowRoom = new ComboBox();
+            SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(293, 251);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Opdater";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            btnUpdate.Location = new Point(256, 188);
+            btnUpdate.Margin = new Padding(3, 2, 3, 2);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(82, 22);
+            btnUpdate.TabIndex = 0;
+            btnUpdate.Text = "Opdater";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // textBoxShowingId
             // 
-            this.textBoxShowingId.Location = new System.Drawing.Point(137, 12);
-            this.textBoxShowingId.Name = "textBoxShowingId";
-            this.textBoxShowingId.Size = new System.Drawing.Size(125, 27);
-            this.textBoxShowingId.TabIndex = 1;
-            this.textBoxShowingId.Text = "Id";
+            textBoxShowingId.Location = new Point(120, 9);
+            textBoxShowingId.Margin = new Padding(3, 2, 3, 2);
+            textBoxShowingId.Name = "textBoxShowingId";
+            textBoxShowingId.Size = new Size(110, 23);
+            textBoxShowingId.TabIndex = 1;
+            textBoxShowingId.Text = "Id";
             // 
             // labelID
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(21, 19);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(24, 20);
-            this.labelID.TabIndex = 2;
-            this.labelID.Text = "ID";
+            labelID.AutoSize = true;
+            labelID.Location = new Point(18, 14);
+            labelID.Name = "labelID";
+            labelID.Size = new Size(18, 15);
+            labelID.TabIndex = 2;
+            labelID.Text = "ID";
             // 
             // labelStartTime
             // 
-            this.labelStartTime.AutoSize = true;
-            this.labelStartTime.Location = new System.Drawing.Point(21, 60);
-            this.labelStartTime.Name = "labelStartTime";
-            this.labelStartTime.Size = new System.Drawing.Size(73, 20);
-            this.labelStartTime.TabIndex = 3;
-            this.labelStartTime.Text = "StartTime";
+            labelStartTime.AutoSize = true;
+            labelStartTime.Location = new Point(18, 45);
+            labelStartTime.Name = "labelStartTime";
+            labelStartTime.Size = new Size(57, 15);
+            labelStartTime.TabIndex = 3;
+            labelStartTime.Text = "StartTime";
             // 
             // labelIsKidFriendly
             // 
-            this.labelIsKidFriendly.AutoSize = true;
-            this.labelIsKidFriendly.Location = new System.Drawing.Point(21, 101);
-            this.labelIsKidFriendly.Name = "labelIsKidFriendly";
-            this.labelIsKidFriendly.Size = new System.Drawing.Size(93, 20);
-            this.labelIsKidFriendly.TabIndex = 4;
-            this.labelIsKidFriendly.Text = "IsKidFriendly";
+            labelIsKidFriendly.AutoSize = true;
+            labelIsKidFriendly.Location = new Point(18, 76);
+            labelIsKidFriendly.Name = "labelIsKidFriendly";
+            labelIsKidFriendly.Size = new Size(74, 15);
+            labelIsKidFriendly.TabIndex = 4;
+            labelIsKidFriendly.Text = "IsKidFriendly";
             // 
             // labelShowRoom
             // 
-            this.labelShowRoom.AutoSize = true;
-            this.labelShowRoom.Location = new System.Drawing.Point(21, 152);
-            this.labelShowRoom.Name = "labelShowRoom";
-            this.labelShowRoom.Size = new System.Drawing.Size(85, 20);
-            this.labelShowRoom.TabIndex = 5;
-            this.labelShowRoom.Text = "ShowRoom";
+            labelShowRoom.AutoSize = true;
+            labelShowRoom.Location = new Point(18, 114);
+            labelShowRoom.Name = "labelShowRoom";
+            labelShowRoom.Size = new Size(68, 15);
+            labelShowRoom.TabIndex = 5;
+            labelShowRoom.Text = "ShowRoom";
             // 
             // labelMovieCopy
             // 
-            this.labelMovieCopy.AutoSize = true;
-            this.labelMovieCopy.Location = new System.Drawing.Point(21, 204);
-            this.labelMovieCopy.Name = "labelMovieCopy";
-            this.labelMovieCopy.Size = new System.Drawing.Size(84, 20);
-            this.labelMovieCopy.TabIndex = 6;
-            this.labelMovieCopy.Text = "MovieCopy";
+            labelMovieCopy.AutoSize = true;
+            labelMovieCopy.Location = new Point(18, 153);
+            labelMovieCopy.Name = "labelMovieCopy";
+            labelMovieCopy.Size = new Size(68, 15);
+            labelMovieCopy.TabIndex = 6;
+            labelMovieCopy.Text = "MovieCopy";
             // 
             // checkBoxIsKidFriendly
             // 
-            this.checkBoxIsKidFriendly.AutoSize = true;
-            this.checkBoxIsKidFriendly.Location = new System.Drawing.Point(137, 104);
-            this.checkBoxIsKidFriendly.Name = "checkBoxIsKidFriendly";
-            this.checkBoxIsKidFriendly.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxIsKidFriendly.TabIndex = 7;
-            this.checkBoxIsKidFriendly.UseVisualStyleBackColor = true;
+            checkBoxIsKidFriendly.AutoSize = true;
+            checkBoxIsKidFriendly.Location = new Point(120, 78);
+            checkBoxIsKidFriendly.Margin = new Padding(3, 2, 3, 2);
+            checkBoxIsKidFriendly.Name = "checkBoxIsKidFriendly";
+            checkBoxIsKidFriendly.Size = new Size(15, 14);
+            checkBoxIsKidFriendly.TabIndex = 7;
+            checkBoxIsKidFriendly.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 60);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 8;
+            dateTimePicker1.Location = new Point(120, 45);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(219, 23);
+            dateTimePicker1.TabIndex = 8;
             // 
             // comboBoxMovieCopy
             // 
-            this.comboBoxMovieCopy.FormattingEnabled = true;
-            this.comboBoxMovieCopy.Location = new System.Drawing.Point(137, 204);
-            this.comboBoxMovieCopy.Name = "comboBoxMovieCopy";
-            this.comboBoxMovieCopy.Size = new System.Drawing.Size(151, 28);
-            this.comboBoxMovieCopy.TabIndex = 9;
+            comboBoxMovieCopy.FormattingEnabled = true;
+            comboBoxMovieCopy.Location = new Point(120, 153);
+            comboBoxMovieCopy.Margin = new Padding(3, 2, 3, 2);
+            comboBoxMovieCopy.Name = "comboBoxMovieCopy";
+            comboBoxMovieCopy.Size = new Size(133, 23);
+            comboBoxMovieCopy.TabIndex = 9;
             // 
             // comboBoxShowRoom
             // 
-            this.comboBoxShowRoom.FormattingEnabled = true;
-            this.comboBoxShowRoom.Location = new System.Drawing.Point(137, 152);
-            this.comboBoxShowRoom.Name = "comboBoxShowRoom";
-            this.comboBoxShowRoom.Size = new System.Drawing.Size(151, 28);
-            this.comboBoxShowRoom.TabIndex = 10;
+            comboBoxShowRoom.FormattingEnabled = true;
+            comboBoxShowRoom.Location = new Point(120, 114);
+            comboBoxShowRoom.Margin = new Padding(3, 2, 3, 2);
+            comboBoxShowRoom.Name = "comboBoxShowRoom";
+            comboBoxShowRoom.Size = new Size(133, 23);
+            comboBoxShowRoom.TabIndex = 10;
             // 
             // SpecificShowing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 300);
-            this.Controls.Add(this.comboBoxShowRoom);
-            this.Controls.Add(this.comboBoxMovieCopy);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.checkBoxIsKidFriendly);
-            this.Controls.Add(this.labelMovieCopy);
-            this.Controls.Add(this.labelShowRoom);
-            this.Controls.Add(this.labelIsKidFriendly);
-            this.Controls.Add(this.labelStartTime);
-            this.Controls.Add(this.labelID);
-            this.Controls.Add(this.textBoxShowingId);
-            this.Controls.Add(this.btnUpdate);
-            this.Name = "SpecificShowing";
-            this.Text = "SpecificShowing";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SpecificShowing_FormClosing);
-            this.Load += new System.EventHandler(this.SpecificShowing_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(355, 225);
+            Controls.Add(comboBoxShowRoom);
+            Controls.Add(comboBoxMovieCopy);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(checkBoxIsKidFriendly);
+            Controls.Add(labelMovieCopy);
+            Controls.Add(labelShowRoom);
+            Controls.Add(labelIsKidFriendly);
+            Controls.Add(labelStartTime);
+            Controls.Add(labelID);
+            Controls.Add(textBoxShowingId);
+            Controls.Add(btnUpdate);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "SpecificShowing";
+            Text = "SpecificShowing";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
