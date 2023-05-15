@@ -1,4 +1,6 @@
-﻿namespace SemesterProjekt3Client.Model
+﻿using SemesterProjekt3Client.Model;
+
+namespace SemesterProjekt3Client.lib
 {
     public class MovieCopy
     {
@@ -9,11 +11,6 @@
         public double Price { get; set; }
         public MovieInfo MovieType { get; set; }
 
-        
-        public string ToString()
-        {
-            return $"{MovieType.Title} Language: {Language} 3D: {Is3D}";
-        }
         public MovieCopy() { }
 
         public MovieCopy(int copyId, string language, bool is3D, double price, MovieInfo movieType)
@@ -25,7 +22,7 @@
             MovieType = movieType;
         }
 
-        
+
 
         public override string ToString()
         {
