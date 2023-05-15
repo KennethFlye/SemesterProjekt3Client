@@ -31,7 +31,7 @@ namespace SemesterProjekt3Client
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.titleLabel = new System.Windows.Forms.Label();
             this.showingsList = new System.Windows.Forms.ListView();
             this.Film = new System.Windows.Forms.ColumnHeader();
@@ -46,6 +46,7 @@ namespace SemesterProjekt3Client
             this.getButton = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.StopLabel = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -64,7 +65,7 @@ namespace SemesterProjekt3Client
             this.Sal,
             this.Tid});
             this.showingsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.showingsList.Location = new System.Drawing.Point(46, 105);
             this.showingsList.Name = "showingsList";
             this.showingsList.Size = new System.Drawing.Size(530, 411);
@@ -87,13 +88,13 @@ namespace SemesterProjekt3Client
             this.movieComboBox.Location = new System.Drawing.Point(607, 262);
             this.movieComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.movieComboBox.Name = "movieComboBox";
-            this.movieComboBox.Size = new System.Drawing.Size(203, 33);
+            this.movieComboBox.Size = new System.Drawing.Size(279, 33);
             this.movieComboBox.TabIndex = 6;
             // 
             // kidCheckBox
             // 
             this.kidCheckBox.AutoSize = true;
-            this.kidCheckBox.Location = new System.Drawing.Point(607, 403);
+            this.kidCheckBox.Location = new System.Drawing.Point(671, 342);
             this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kidCheckBox.Name = "kidCheckBox";
             this.kidCheckBox.Size = new System.Drawing.Size(215, 29);
@@ -107,7 +108,7 @@ namespace SemesterProjekt3Client
             this.ShowRoomComboBox.Location = new System.Drawing.Point(607, 338);
             this.ShowRoomComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShowRoomComboBox.Name = "ShowRoomComboBox";
-            this.ShowRoomComboBox.Size = new System.Drawing.Size(203, 33);
+            this.ShowRoomComboBox.Size = new System.Drawing.Size(55, 33);
             this.ShowRoomComboBox.TabIndex = 8;
             // 
             // movieLabel
@@ -143,9 +144,11 @@ namespace SemesterProjekt3Client
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(607, 198);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(758, 198);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(204, 31);
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(128, 31);
             this.dateTimePicker1.TabIndex = 12;
             // 
             // StopLabel
@@ -156,13 +159,23 @@ namespace SemesterProjekt3Client
             this.StopLabel.Size = new System.Drawing.Size(147, 25);
             this.StopLabel.TabIndex = 13;
             this.StopLabel.Text = "Lad vær med det";
-            this.StopLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Enabled = false;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(607, 198);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePicker2.Size = new System.Drawing.Size(145, 31);
+            this.dateTimePicker2.TabIndex = 14;
             // 
             // ShowingIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 605);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.StopLabel);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.getButton);
@@ -176,7 +189,6 @@ namespace SemesterProjekt3Client
             this.Controls.Add(this.titleLabel);
             this.Name = "ShowingIndexForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ShowingIndexForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +210,7 @@ namespace SemesterProjekt3Client
         private Button getButton;
         private DateTimePicker dateTimePicker1;
         private Label StopLabel;
+        private DateTimePicker dateTimePicker2;
     }
 }
     

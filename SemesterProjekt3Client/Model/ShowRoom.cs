@@ -1,4 +1,6 @@
-﻿namespace SemesterProjekt3Client.Model
+﻿using SemesterProjekt3Client.Controllers;
+
+namespace SemesterProjekt3Client.Model
 {
     public class ShowRoom
     {

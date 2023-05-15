@@ -7,6 +7,7 @@ namespace SemesterProjekt3Client
     {
         private readonly ShowingController _showingCtrl;
         private readonly MovieController _movieCtrl;
+        private readonly ShowRoomController _roomCtrl;
         private IEnumerable<Showing>? _showingList;
         private IEnumerable<MovieCopy> _movieList;
         private IEnumerable<ShowRoom> _roomList;
@@ -39,7 +40,7 @@ namespace SemesterProjekt3Client
         private void getButton_Click(object sender, EventArgs e)
         {
             UpdateMovieComboBox();
-            //UpdateRoomComboBox();
+            UpdateRoomComboBox();
             UpdateShowingList();
 
         }
@@ -101,31 +102,22 @@ namespace SemesterProjekt3Client
 
         }
 
-        private void showingListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
+       
 
+        
+        public async void UpdateRoomComboBox()
+        {
+            _roomList = await _roomCtrl.GetShowRooms();
+            ShowRoomComboBox.Items.Clear();
+            if (_roomList.Count() < 1)
+            {
+                foreach (var i in _roomList)
+                {
+                    ShowRoomComboBox.Items.Add(i.RoomNumber);
+                }
+            }
         }
 
-        private void ShowingIndexForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        //public async void UpdateRoomComboBox()
-        //{
-        //    _roomList = await _roomCtrl.GetMoviesCopy();
-        //    showRoomComboBox.Items.Clear();
-        //    if (_roomList.Count() < 1)
-        //    {
-        //        foreach (var i in _roomList)
-        //        {
-        //            showRoomComboBox.Items.Add(i.RoomNumber);
-        //        }
-        //    }
-        //}
+      
     }
 }
