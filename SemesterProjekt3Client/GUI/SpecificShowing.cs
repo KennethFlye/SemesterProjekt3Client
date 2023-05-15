@@ -50,6 +50,15 @@ namespace SemesterProjekt3Client.GUI
             try
             {
                 showing.ShowingId = int.Parse(textBoxShowingId.Text);
+                showing.startTime = dateTimePicker1.Value;
+                showing.IsKidFriendly = checkBoxIsKidFriendly.Checked;
+
+                ///showroom get from combobox
+                
+                comboBoxShowRoom.Items.Add(showing.ShowRoom);
+                //showing.ShowRoom = comboBoxShowRoom.Items[0].
+
+
             }catch (Exception){
                 MessageBox.Show("Id must be an integer value!");
             }
