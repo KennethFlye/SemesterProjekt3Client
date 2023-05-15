@@ -43,7 +43,9 @@ namespace SemesterProjekt3Client.Controllers
 
         public async Task<bool> UpdateShowing(int id, Showing showing)
         {
-            throw new NotImplementedException();
+
+           return await api.UpdateShowing(id, showing);
+
         }
 
     }

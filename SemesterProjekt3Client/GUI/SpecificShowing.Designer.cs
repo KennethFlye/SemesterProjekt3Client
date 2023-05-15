@@ -57,6 +57,7 @@
             textBoxShowingId.Location = new Point(120, 9);
             textBoxShowingId.Margin = new Padding(3, 2, 3, 2);
             textBoxShowingId.Name = "textBoxShowingId";
+            textBoxShowingId.ReadOnly = true;
             textBoxShowingId.Size = new Size(110, 23);
             textBoxShowingId.TabIndex = 1;
             textBoxShowingId.Text = "Id";

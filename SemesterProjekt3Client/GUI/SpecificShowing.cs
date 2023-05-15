@@ -63,7 +63,7 @@ namespace SemesterProjekt3Client.GUI
             showrooms = (List<ShowRoom>)await src.GetShowRooms();
             moviecopies = (List<MovieCopy>)await mc.GetAllMovieCopiesAsync();
 
-            if (showing == null)
+            if (showing == null) //TODO STUB TODO STUB - WARNING - REMOVE LATER WHEN SHOWING ID IS ASSIGNED IN CONSTRUCTOR
             {
                 ShowingController showingController = new ShowingController();
                 this.showing = await showingController.GetShowingById(10);
@@ -97,14 +97,8 @@ namespace SemesterProjekt3Client.GUI
         private async void AssignNewValuesToShowing(Showing s)
         {
             //Id
-            try
-            {
-                showing.ShowingId = int.Parse(textBoxShowingId.Text);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Id must be an integer value!");
-            }
+            try { showing.ShowingId = int.Parse(textBoxShowingId.Text); }
+            catch (Exception) { MessageBox.Show("Id must be an integer value!"); }
             //StartTime
             showing.startTime = dateTimePicker1.Value;
             //IsKidFriendly
@@ -115,7 +109,7 @@ namespace SemesterProjekt3Client.GUI
             //MovieCopy
             showing.MovieCopy = moviecopies[comboBoxMovieCopy.SelectedIndex];
 
-            MessageBox.Show(showing.ShowingId + "\n" + showing.MovieCopy.CopyId + "\n" + showing.IsKidFriendly + "\n" + showing.ShowRoom.RoomNumber);
+            //DEBUG MessageBox.Show(showing.ShowingId + "\n" + showing.MovieCopy.CopyId + "\n" + showing.IsKidFriendly + "\n" + showing.ShowRoom.RoomNumber);
 
             await AssignInformationToControlsAsync(showing);
         }
@@ -125,12 +119,13 @@ namespace SemesterProjekt3Client.GUI
         {
             AssignNewValuesToShowing(showing);
 
-            //Other method to post the data change
+            //post the data change
             ShowingController sc = new ShowingController();
-            if(await sc.UpdateShowing(showing.ShowingId, showing)){
+            if (await sc.UpdateShowing(showing.ShowingId, showing))
+            {
                 MessageBox.Show("The showing has been updated.");
             }
         }
-     
+
     }
 }
