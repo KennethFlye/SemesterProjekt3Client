@@ -160,16 +160,6 @@ namespace SemesterProjekt3Client
             this.StopLabel.TabIndex = 13;
             this.StopLabel.Text = "Lad vær med det";
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(607, 198);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker2.Size = new System.Drawing.Size(145, 31);
-            this.dateTimePicker2.TabIndex = 14;
-            // 
             // ShowingIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -188,7 +178,7 @@ namespace SemesterProjekt3Client
             this.Controls.Add(this.showingsList);
             this.Controls.Add(this.titleLabel);
             this.Name = "ShowingIndexForm";
-            this.Text = "Form1";
+            this.Text = "Filmvisninger";
             this.ResumeLayout(false);
             this.PerformLayout();
 

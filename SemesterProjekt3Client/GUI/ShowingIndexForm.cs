@@ -22,13 +22,7 @@ namespace SemesterProjekt3Client
             _movieCtrl = new MovieController();
             _roomCtrl = new ShowRoomController();
 
-            getLists();
-
-            UpdateMovieComboBox(_movieList);
-            //UpdateRoomComboBox();
-            UpdateShowingList(_showingList);
-
-
+            FillLists();
 
             //var rTemplist = _showRoomCtrl.GetShowRooms();
             //_roomList = rTemplist.GetAwaiter().GetResult();
@@ -41,25 +35,23 @@ namespace SemesterProjekt3Client
 
 
 
-
-
-
-        private void getButton_Click(object sender, EventArgs e)
+        private async Task FillLists()
         {
-            UpdateShowingList(_showingList);
-            UpdateMovieComboBox(_movieList);
+            await UpdateMovieComboBox();
             //UpdateRoomComboBox();
-         
-
+            await UpdateShowingList();
         }
-        public async void UpdateShowingList(IEnumerable<Showing> list)
+
+
+        private async void getButton_Click(object sender, EventArgs e)
         {
+            FillLists();
+        }
 
-           // _showingList = await _showingCtrl.GetShowingsAsync();
-
-
-
-            if (_showingList.Count() > 0 && _movieList != null)
+        public async Task UpdateShowingList()
+        {
+            _showingList = await _showingCtrl.GetShowings();
+            if (_showingList.Count() > 0)
             {
 
                 showingsList.Items.Clear();
@@ -69,10 +61,6 @@ namespace SemesterProjekt3Client
                     showingsList.Items.Add(i.ToString());
                 }
             }
-
-
-
-        }
 
 
 
@@ -89,19 +77,15 @@ namespace SemesterProjekt3Client
         //    _showingCtrl.CreateShowing(show);
 
 
-        //}
-    
-    public  void UpdateMovieComboBox(IEnumerable<MovieCopy> list)
-    {
-
-        //_movieList = await list.GetMoviesCopy();
-
-            if (list.Count() > 0 && list != null)
+            //}
+        }
+        public async Task UpdateMovieComboBox()
+        {
+            _movieList = await _movieCtrl.GetMoviesCopy();
+            if (_movieList.Count() > 0)
             {
-
                 movieComboBox.Items.Clear();
-
-                foreach (var i in list)
+                foreach (var i in _movieList)
                 {
                     movieComboBox.Items.Add(i.ToString());
                 }
@@ -109,28 +93,17 @@ namespace SemesterProjekt3Client
 
     }
 
-    public  async void getLists()
-        {
-            _showingList  = await _showingCtrl.GetShowingsAsync();
-            _movieList = await _movieCtrl.GetMoviesCopy();
-            
-        }
-
-
-
-    //public async void UpdateRoomComboBox()
-    //{
-    //    _roomList = await _roomCtrl.GetShowRooms();
-    //    ShowRoomComboBox.Items.Clear();
-        
-
-    //    foreach (var i in _roomList)
-    //    {
-    //        ShowRoomComboBox.Items.Add(i.RoomNumber);
-    //    }
-
-    //}
-
-
-}
+        //public async void UpdateRoomComboBox()
+        //{
+        //    _roomList = await _roomCtrl.GetMoviesCopy();
+        //    showRoomComboBox.Items.Clear();
+        //    if (_roomList.Count() < 1)
+        //    {
+        //        foreach (var i in _roomList)
+        //        {
+        //            showRoomComboBox.Items.Add(i.RoomNumber);
+        //        }
+        //    }
+        //}
+    }
 }
