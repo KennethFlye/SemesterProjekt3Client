@@ -94,6 +94,8 @@ namespace SemesterProjekt3Client
                 DateTime date = datePicker.Value;
                 DateTime time = timePicker.Value;
                 starttime.Date = date;
+                ShowRoom room = _roomCtrl
+                MovieCopy movie = _movieCtrl.
                 
                 
 
