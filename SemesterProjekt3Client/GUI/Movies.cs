@@ -94,7 +94,7 @@ namespace SemesterProjekt3Client
         {
             if(listBox1.SelectedItem != null)
             {
-                SpecificMovie specificMovieWindow = new SpecificMovie((MovieInfo)listBox1.SelectedItem);
+                SpecificMovieReal specificMovieWindow = new SpecificMovieReal((MovieInfo)listBox1.SelectedItem);
                 specificMovieWindow.ShowDialog();
             }
             

@@ -100,8 +100,8 @@ namespace SemesterProjekt3Client
                 ShowRoom room = await _roomCtrl.GetShowRoomById(rId);
 
                 int mId = movieComboBox.SelectedItem.ToString().First();
-                MovieCopy movie =  await _movieCtrl.GetMovieCopy(mId);
-                
+                //MovieCopy movie =  await _movieCtrl.GetMovieCopy(mId);
+                MovieCopy movie = new(); //Slet den her når den ovenover virker
                 bool kid = false;
                 if (kidCheckBox.Checked)
                 {
@@ -126,7 +126,7 @@ namespace SemesterProjekt3Client
         }
         public async Task UpdateMovieComboBox()
         {
-            _movieList = await _movieCtrl.GetMoviesCopy();
+            _movieList = await _movieCtrl.GetAllMovieCopiesAsync();
             if (_movieList.Count() > 0)
             {
                 movieComboBox.Items.Clear();
