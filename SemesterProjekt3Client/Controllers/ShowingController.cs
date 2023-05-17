@@ -15,10 +15,8 @@ namespace SemesterProjekt3Client.Controllers
 
         public async Task<bool> CreateShowing(Showing show)
         {
-            
 
-           bool saved = await api.CreateShowing(show);
-
+            bool saved = await api.CreateShowing(show);
 
             return saved;
         }
@@ -27,23 +25,19 @@ namespace SemesterProjekt3Client.Controllers
         {
             IEnumerable<Showing> showings = await api.GetShowingsAsync();
 
-
-           
-
-
             return showings;
         }
         public async Task<Showing> GetShowingById(int id)
         {
-         
             Showing show = await api.GetShowingById(id);
 
             return show;
         }
 
-        public async Task<bool> UpdateShowing(int id)
+        public async Task<bool> UpdateShowing(int id, Showing showing)
         {
-            throw new NotImplementedException();
+
+            return await api.UpdateShowing(id, showing);
         }
 
     }

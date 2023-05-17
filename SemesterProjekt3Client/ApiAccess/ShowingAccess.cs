@@ -90,9 +90,28 @@ namespace SemesterProjekt3Client.ApiAccess
             return show;
         }
 
-        public async Task<bool> UpdateShowing()
+        public async Task<bool> UpdateShowing(int id, Showing showing)
         {
-            throw  new NotImplementedException();
+            string url = baseUrl + $"/{id}";
+            Uri uri = new Uri(string.Format(url));
+
+            showing.ShowRoom.Seats = new();
+            try
+            {
+                var json = JsonConvert.SerializeObject(showing);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var patchResponse = await client.PutAsync(uri,content);
+
+                if (patchResponse != null && patchResponse.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch 
+            {
+
+            }
+            return false;
         }
 
     }
