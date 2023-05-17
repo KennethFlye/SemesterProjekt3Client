@@ -189,8 +189,7 @@ namespace SemesterProjekt3Client.GUI
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SpecificShowing";
             this.Text = "SpecificShowing";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SpecificShowing_FormClosing);
-            this.Load += new System.EventHandler(this.SpecificShowing_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

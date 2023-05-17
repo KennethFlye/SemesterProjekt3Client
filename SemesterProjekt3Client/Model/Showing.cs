@@ -6,12 +6,12 @@
         
         public Showing()
         {
-
-        }
-        public Showing(DateTime datetime, bool IsKidFriendly,ShowRoom room,MovieCopy copy ) 
-        {
             IsKidFriendly = false;
         }
+        public Showing(int id, DateTime datetime, bool IsKidFriendly,ShowRoom room,MovieCopy copy )
+        { 
+        }
+
   
         public int ShowingId { get; set; }
         public DateTime startTime { get; set; }
@@ -20,9 +20,9 @@
         public MovieCopy MovieCopy { get; set; }
 
 
-        public string ToString()
+        public override string ToString()
         {
-            return $"{MovieCopy.MovieType.Title}  {ShowRoom.RoomNumber}. Sal  {startTime}";
+            return $"{MovieCopy.MovieType.Title};  Sal {ShowRoom.RoomNumber};   {startTime}";
         }
 
     }

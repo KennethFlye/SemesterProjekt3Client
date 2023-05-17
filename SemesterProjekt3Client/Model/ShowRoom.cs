@@ -23,5 +23,10 @@ namespace SemesterProjekt3Client.Model
             return amountOfRows;
         }
 
+        public override string ToString()
+        {
+            return $"Sal {RoomNumber}";
+        }
+
     }
 }

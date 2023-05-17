@@ -66,7 +66,7 @@ namespace SemesterProjekt3Client.GUI
             if (showing == null) //TODO STUB TODO STUB - WARNING - REMOVE LATER WHEN SHOWING ID IS ASSIGNED IN CONSTRUCTOR
             {
                 ShowingController showingController = new ShowingController();
-                this.showing = await showingController.GetShowingById(10);
+                this.showing = await showingController.GetShowingById(showing.ShowingId);
             }
 
             textBoxShowingId.Text = showing.ShowingId.ToString();
@@ -79,7 +79,7 @@ namespace SemesterProjekt3Client.GUI
             for (int i = 0; i < showrooms.Count; i++)
             {
                 var item = showrooms[i];
-                comboBoxShowRoom.Items.Add(item.RoomNumber + " (" + item.Capacity + ")"); //Fill combobox
+                comboBoxShowRoom.Items.Add("Sal" + item.RoomNumber ); //Fill combobox
                 if (item.RoomNumber == showing.ShowRoom.RoomNumber)
                     comboBoxShowRoom.SelectedIndex = i;
             }
@@ -87,7 +87,7 @@ namespace SemesterProjekt3Client.GUI
             for (int i = 0; i < moviecopies.Count; i++)
             {
                 var item = moviecopies[i];
-                comboBoxMovieCopy.Items.Add(item.CopyId + " (" + item.Language + ")");
+                comboBoxMovieCopy.Items.Add(item.MovieType.Title + " " + item.ToString());
                 if (item.CopyId == showing.MovieCopy.CopyId)
                     comboBoxMovieCopy.SelectedIndex = i;
             }
@@ -119,9 +119,12 @@ namespace SemesterProjekt3Client.GUI
 
             //post the data change
             ShowingController sc = new ShowingController();
+            
             if (await sc.UpdateShowing(showing.ShowingId, showing))
             {
                 MessageBox.Show("The showing has been updated.");
+                this.Dispose();
+                
             }
         }
 

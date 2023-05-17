@@ -1,8 +1,6 @@
 using SemesterProjekt3Client.Controllers;
 using SemesterProjekt3Client.GUI;
 using SemesterProjekt3Client.Model;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace SemesterProjekt3Client
 {
@@ -27,21 +25,13 @@ namespace SemesterProjekt3Client
 
             FillLists();
 
-            //var rTemplist = _showRoomCtrl.GetShowRooms();
-            //_roomList = rTemplist.GetAwaiter().GetResult();
-            //foreach (var i in _roomList)
-            //{
-            //    _roomList.Items.Add(i);
-            //}
+
         }
-
-
-
 
         private async Task FillLists()
         {
             await UpdateMovieComboBox();
-            //UpdateRoomComboBox();
+            await UpdateRoomComboBox();
             await UpdateShowingList();
         }
 
@@ -58,7 +48,7 @@ namespace SemesterProjekt3Client
             {
 
                 showingsList.Items.Clear();
-                foreach (Showing? i in _showingList)
+                foreach (Showing i in _showingList)
                 {
 
                     showingsList.Items.Add(i);
@@ -70,7 +60,8 @@ namespace SemesterProjekt3Client
         {
             if (showingsList.SelectedItem != null)
             {
-                ShowingEditForm form = new ShowingEditForm((Showing)showingsList.SelectedItem);
+                SpecificShowing form = new SpecificShowing((Showing)showingsList.SelectedItem);
+
                 form.ShowDialog();
             }
         }
@@ -101,33 +92,24 @@ namespace SemesterProjekt3Client
             else
             {
 
-
+                Showing newShow = new();
 
                 DateTime date = datePicker.Value;
                 DateTime time = timePicker.Value;
                 DateTime starttime = new DateTime(date.Year, date.Month, date.Month, time.Hour, time.Minute, time.Second);
 
-                int rId = ShowRoomComboBox.SelectedItem.ToString().First();
-                ShowRoom room = await _roomCtrl.GetShowRoomById(rId);
-
-                int mId = movieComboBox.SelectedItem.ToString().First();
-                MovieCopy movie =  await _movieCtrl.GetMovieCopyAsync(mId);
-               
-                bool kid = false;
-                if (kidCheckBox.Checked)
-                {
-                    kid = true;
-                }
+                newShow.startTime = starttime;
+                newShow.ShowRoom = (ShowRoom)ShowRoomComboBox.SelectedItem;
+                newShow.MovieCopy = (MovieCopy)movieComboBox.SelectedItem;
+                newShow.IsKidFriendly = kidCheckBox.Checked;
 
 
-
-                Showing newShow = new Showing(starttime, kid, room, movie);
                 bool savedOk = await _showingCtrl.CreateShowing(newShow);
                 if (savedOk)
                 {
 
                     await UpdateShowingList();
-                    titleLabel.Text = "Shauning was succesfully uploaded to database" + room.RoomNumber;
+                    titleLabel.Text = "Shauning was succesfully uploaded to database";
 
                 }
                 else
@@ -144,21 +126,22 @@ namespace SemesterProjekt3Client
                 movieComboBox.Items.Clear();
                 foreach (var i in _movieList)
                 {
-                    movieComboBox.Items.Add(i.CopyId);
+                    movieComboBox.Items.Add(i);
                 }
             }
 
-    }
+        }
 
-        public async void UpdateRoomComboBox()
+        public async Task UpdateRoomComboBox()
         {
             _roomList = await _roomCtrl.GetShowRooms();
-            ShowRoomComboBox.Items.Clear();
-            if (_roomList.Count() < 1)
+
+            if (_roomList.Count() > 0)
             {
+                ShowRoomComboBox.Items.Clear();
                 foreach (var i in _roomList)
                 {
-                    ShowRoomComboBox.Items.Add(i.RoomNumber);
+                    ShowRoomComboBox.Items.Add(i);
                 }
             }
         }

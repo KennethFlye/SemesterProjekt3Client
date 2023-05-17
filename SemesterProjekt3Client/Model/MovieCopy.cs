@@ -26,7 +26,7 @@
 
         public override string ToString()
         {
-            return $"{Language}, {Is3DToString()}, {Price} Kr";
+            return $"{CopyId}: {MovieType.Title} ({Language}, {Is3DToString()}, {Price} Kr.)";
         }
 
         public string Is3DToString()
