@@ -41,7 +41,7 @@
             this.btnMovies.Name = "btnMovies";
             this.btnMovies.Size = new System.Drawing.Size(134, 40);
             this.btnMovies.TabIndex = 0;
-            this.btnMovies.Text = "Movies";
+            this.btnMovies.Text = "Film";
             this.btnMovies.UseVisualStyleBackColor = true;
             this.btnMovies.Click += new System.EventHandler(this.btnMovies_Click);
             // 
@@ -71,7 +71,7 @@
             this.btnShowings.Name = "btnShowings";
             this.btnShowings.Size = new System.Drawing.Size(134, 40);
             this.btnShowings.TabIndex = 3;
-            this.btnShowings.Text = "Showings";
+            this.btnShowings.Text = "Forestillinger";
             this.btnShowings.UseVisualStyleBackColor = true;
             this.btnShowings.Click += new System.EventHandler(this.btnShowings_Click);
             // 

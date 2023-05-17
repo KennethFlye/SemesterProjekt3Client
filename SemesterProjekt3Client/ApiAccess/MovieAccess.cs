@@ -179,5 +179,31 @@ namespace SemesterProjekt3Client.ApiAccess
             }
             return movieCopies;
         }
+
+        public async Task<MovieCopy> GetShowingById(int id)
+        {
+            MovieCopy copy;
+            string url = baseUrl + $"/{id}";
+            var uri = new Uri(string.Format(url));
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    copy = JsonConvert.DeserializeObject<MovieCopy>(content);
+                }
+                else
+                {
+                    copy = null;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return copy;
+        }
     }
 }
