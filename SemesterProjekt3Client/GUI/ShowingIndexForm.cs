@@ -100,8 +100,8 @@ namespace SemesterProjekt3Client
                 ShowRoom room = await _roomCtrl.GetShowRoomById(rId);
 
                 int mId = movieComboBox.SelectedItem.ToString().First();
-                //MovieCopy movie =  await _movieCtrl.GetMovieCopy(mId);
-                MovieCopy movie = new(); //Slet den her når den ovenover virker
+                MovieCopy movie =  await _movieCtrl.GetMovieCopyAsync(mId);
+               
                 bool kid = false;
                 if (kidCheckBox.Checked)
                 {
@@ -114,7 +114,8 @@ namespace SemesterProjekt3Client
                 bool savedOk = await _showingCtrl.CreateShowing(newShow);
                 if (savedOk)
                 {
-                    
+
+                    await UpdateShowingList();
                     titleLabel.Text = "Shauning was succesfully uploaded to database" + room.RoomNumber;
 
                 }
@@ -138,17 +139,17 @@ namespace SemesterProjekt3Client
 
     }
 
-        //public async void UpdateRoomComboBox()
-        //{
-        //    _roomList = await _roomCtrl.GetMoviesCopy();
-        //    showRoomComboBox.Items.Clear();
-        //    if (_roomList.Count() < 1)
-        //    {
-        //        foreach (var i in _roomList)
-        //        {
-        //            showRoomComboBox.Items.Add(i.RoomNumber);
-        //        }
-        //    }
-        //}
+        public async void UpdateRoomComboBox()
+        {
+            _roomList = await _roomCtrl.GetShowRooms();
+            ShowRoomComboBox.Items.Clear();
+            if (_roomList.Count() < 1)
+            {
+                foreach (var i in _roomList)
+                {
+                    ShowRoomComboBox.Items.Add(i.RoomNumber);
+                }
+            }
+        }
     }
 }

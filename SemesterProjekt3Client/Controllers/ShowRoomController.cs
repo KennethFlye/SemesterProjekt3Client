@@ -20,7 +20,7 @@ namespace SemesterProjekt3Client.Controllers
         {
             IEnumerable<ShowRoom> rooms;
 
-                rooms = await rAccess.GetShowRooms();
+           rooms = await rAccess.GetShowRooms();
            
             return rooms;
         }

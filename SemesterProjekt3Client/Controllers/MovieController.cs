@@ -54,5 +54,12 @@ namespace SemesterProjekt3Client.Controllers
             return moviesCopies;
         }
 
+        public async Task<MovieCopy> GetMovieCopyAsync(int id)
+        {
+            MovieCopy copy = await mAccess.GetShowingById(id);
+
+            return copy;
+        }
+
     }
 }
