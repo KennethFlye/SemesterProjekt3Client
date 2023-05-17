@@ -160,7 +160,6 @@ namespace SemesterProjekt3Client
             this.StopLabel.Size = new System.Drawing.Size(147, 25);
             this.StopLabel.TabIndex = 13;
             this.StopLabel.Text = "Lad vær med det";
-            this.StopLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // datePicker
             // 
@@ -188,7 +187,6 @@ namespace SemesterProjekt3Client
             this.Controls.Add(this.titleLabel);
             this.Name = "ShowingIndexForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ShowingIndexForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

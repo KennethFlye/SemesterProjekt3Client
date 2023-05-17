@@ -37,7 +37,8 @@ namespace SemesterProjekt3Client.Controllers
         public async Task<bool> UpdateShowing(int id, Showing showing)
         {
 
-           return await api.UpdateShowing(id, showing);
+            return await api.UpdateShowing(id, showing);
         }
 
+    }
 }
