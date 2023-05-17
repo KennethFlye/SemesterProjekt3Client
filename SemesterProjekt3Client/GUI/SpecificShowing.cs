@@ -112,7 +112,6 @@ namespace SemesterProjekt3Client.GUI
             await AssignInformationToControlsAsync(showing);
         }
 
-
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
             await AssignNewValuesToShowing(showing);
@@ -125,5 +124,9 @@ namespace SemesterProjekt3Client.GUI
             }
         }
 
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

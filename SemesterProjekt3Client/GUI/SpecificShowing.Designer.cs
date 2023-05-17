@@ -41,14 +41,14 @@ namespace SemesterProjekt3Client.GUI
             this.comboBoxShowRoom = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(363, 385);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(290, 308);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(118, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Opdater";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -56,123 +56,122 @@ namespace SemesterProjekt3Client.GUI
             // 
             // textBoxShowingId
             // 
-            this.textBoxShowingId.Location = new System.Drawing.Point(171, 15);
-            this.textBoxShowingId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxShowingId.Location = new System.Drawing.Point(137, 12);
             this.textBoxShowingId.Name = "textBoxShowingId";
-            this.textBoxShowingId.Size = new System.Drawing.Size(155, 31);
+            this.textBoxShowingId.Size = new System.Drawing.Size(125, 27);
             this.textBoxShowingId.TabIndex = 1;
             this.textBoxShowingId.Text = "Id";
             // 
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(26, 24);
-            this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelID.Location = new System.Drawing.Point(21, 19);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(30, 25);
+            this.labelID.Size = new System.Drawing.Size(24, 20);
             this.labelID.TabIndex = 2;
             this.labelID.Text = "ID";
             // 
             // labelStartTime
             // 
             this.labelStartTime.AutoSize = true;
-            this.labelStartTime.Location = new System.Drawing.Point(26, 81);
-            this.labelStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStartTime.Location = new System.Drawing.Point(21, 65);
             this.labelStartTime.Name = "labelStartTime";
-            this.labelStartTime.Size = new System.Drawing.Size(51, 25);
+            this.labelStartTime.Size = new System.Drawing.Size(42, 20);
             this.labelStartTime.TabIndex = 3;
             this.labelStartTime.Text = "Dato";
             // 
             // labelIsKidFriendly
             // 
             this.labelIsKidFriendly.AutoSize = true;
-            this.labelIsKidFriendly.Location = new System.Drawing.Point(26, 314);
-            this.labelIsKidFriendly.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelIsKidFriendly.Location = new System.Drawing.Point(21, 251);
             this.labelIsKidFriendly.Name = "labelIsKidFriendly";
-            this.labelIsKidFriendly.Size = new System.Drawing.Size(83, 25);
+            this.labelIsKidFriendly.Size = new System.Drawing.Size(70, 20);
             this.labelIsKidFriendly.TabIndex = 4;
             this.labelIsKidFriendly.Text = "BørneBio";
             // 
             // labelShowRoom
             // 
             this.labelShowRoom.AutoSize = true;
-            this.labelShowRoom.Location = new System.Drawing.Point(26, 198);
-            this.labelShowRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelShowRoom.Location = new System.Drawing.Point(21, 158);
             this.labelShowRoom.Name = "labelShowRoom";
-            this.labelShowRoom.Size = new System.Drawing.Size(35, 25);
+            this.labelShowRoom.Size = new System.Drawing.Size(29, 20);
             this.labelShowRoom.TabIndex = 5;
             this.labelShowRoom.Text = "Sal";
             // 
             // labelMovieCopy
             // 
             this.labelMovieCopy.AutoSize = true;
-            this.labelMovieCopy.Location = new System.Drawing.Point(26, 263);
-            this.labelMovieCopy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMovieCopy.Location = new System.Drawing.Point(21, 210);
             this.labelMovieCopy.Name = "labelMovieCopy";
-            this.labelMovieCopy.Size = new System.Drawing.Size(45, 25);
+            this.labelMovieCopy.Size = new System.Drawing.Size(37, 20);
             this.labelMovieCopy.TabIndex = 6;
             this.labelMovieCopy.Text = "Film";
             // 
             // checkBoxIsKidFriendly
             // 
             this.checkBoxIsKidFriendly.AutoSize = true;
-            this.checkBoxIsKidFriendly.Location = new System.Drawing.Point(171, 318);
-            this.checkBoxIsKidFriendly.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxIsKidFriendly.Location = new System.Drawing.Point(137, 254);
             this.checkBoxIsKidFriendly.Name = "checkBoxIsKidFriendly";
-            this.checkBoxIsKidFriendly.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxIsKidFriendly.Size = new System.Drawing.Size(18, 17);
             this.checkBoxIsKidFriendly.TabIndex = 7;
             this.checkBoxIsKidFriendly.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 75);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(137, 60);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 27);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // comboBoxMovieCopy
             // 
             this.comboBoxMovieCopy.FormattingEnabled = true;
-            this.comboBoxMovieCopy.Location = new System.Drawing.Point(171, 255);
-            this.comboBoxMovieCopy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxMovieCopy.Location = new System.Drawing.Point(137, 204);
             this.comboBoxMovieCopy.Name = "comboBoxMovieCopy";
-            this.comboBoxMovieCopy.Size = new System.Drawing.Size(188, 33);
+            this.comboBoxMovieCopy.Size = new System.Drawing.Size(151, 28);
             this.comboBoxMovieCopy.TabIndex = 9;
             // 
             // comboBoxShowRoom
             // 
             this.comboBoxShowRoom.FormattingEnabled = true;
-            this.comboBoxShowRoom.Location = new System.Drawing.Point(171, 190);
-            this.comboBoxShowRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxShowRoom.Location = new System.Drawing.Point(137, 152);
             this.comboBoxShowRoom.Name = "comboBoxShowRoom";
-            this.comboBoxShowRoom.Size = new System.Drawing.Size(188, 33);
+            this.comboBoxShowRoom.Size = new System.Drawing.Size(151, 28);
             this.comboBoxShowRoom.TabIndex = 10;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(171, 130);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(137, 104);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(188, 31);
+            this.dateTimePicker2.Size = new System.Drawing.Size(151, 27);
             this.dateTimePicker2.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 136);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(21, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 25);
+            this.label1.Size = new System.Drawing.Size(30, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Tid";
             // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(12, 318);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(94, 29);
+            this.btn_back.TabIndex = 13;
+            this.btn_back.Text = "Tilbage";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // SpecificShowing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 449);
+            this.ClientSize = new System.Drawing.Size(406, 359);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.comboBoxShowRoom);
@@ -186,11 +185,8 @@ namespace SemesterProjekt3Client.GUI
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.textBoxShowingId);
             this.Controls.Add(this.btnUpdate);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SpecificShowing";
             this.Text = "SpecificShowing";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SpecificShowing_FormClosing);
-            this.Load += new System.EventHandler(this.SpecificShowing_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +207,6 @@ namespace SemesterProjekt3Client.GUI
         private ComboBox comboBoxShowRoom;
         private DateTimePicker dateTimePicker2;
         private Label label1;
+        private Button btn_back;
     }
 }
