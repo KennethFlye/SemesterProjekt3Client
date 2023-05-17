@@ -35,12 +35,13 @@ namespace SemesterProjekt3Client
         private void btnMovies_Click(object sender, EventArgs e)
         {
             Movies m = new Movies();
-            m.Show();
+            m.ShowDialog();
         }
 
         private void btnShowings_Click(object sender, EventArgs e)
         {
-            
+            ShowingIndexForm sif = new ShowingIndexForm();
+            sif.ShowDialog();
         }
     }
 }
