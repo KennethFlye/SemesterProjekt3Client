@@ -100,7 +100,6 @@ namespace SemesterProjekt3Client.ApiAccess
             {
                 var json = JsonConvert.SerializeObject(showing);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                MessageBox.Show(await content.ReadAsStringAsync()); //Hvis denne mangler dør koden...
                 var patchResponse = await client.PutAsync(uri,content);
 
                 if (patchResponse != null && patchResponse.IsSuccessStatusCode)

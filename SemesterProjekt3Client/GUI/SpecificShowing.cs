@@ -94,7 +94,7 @@ namespace SemesterProjekt3Client.GUI
 
         }
 
-        private async void AssignNewValuesToShowing(Showing s)
+        private async Task AssignNewValuesToShowing(Showing s)
         {
             //Id
             try { showing.ShowingId = int.Parse(textBoxShowingId.Text); }
@@ -108,16 +108,14 @@ namespace SemesterProjekt3Client.GUI
             showing.ShowRoom = showrooms[comboBoxShowRoom.SelectedIndex];
             //MovieCopy
             showing.MovieCopy = moviecopies[comboBoxMovieCopy.SelectedIndex];
-
-            //DEBUG MessageBox.Show(showing.ShowingId + "\n" + showing.MovieCopy.CopyId + "\n" + showing.IsKidFriendly + "\n" + showing.ShowRoom.RoomNumber);
-
+            
             await AssignInformationToControlsAsync(showing);
         }
 
 
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            AssignNewValuesToShowing(showing);
+            await AssignNewValuesToShowing(showing);
 
             //post the data change
             ShowingController sc = new ShowingController();
