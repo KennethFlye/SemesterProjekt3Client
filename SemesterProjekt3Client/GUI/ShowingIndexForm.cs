@@ -62,7 +62,9 @@ namespace SemesterProjekt3Client
             {
                 SpecificShowing form = new SpecificShowing((Showing)showingsList.SelectedItem);
 
+                this.Dispose();
                 form.ShowDialog();
+                
             }
         }
 

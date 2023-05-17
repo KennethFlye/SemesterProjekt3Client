@@ -117,13 +117,17 @@ namespace SemesterProjekt3Client.GUI
             await AssignNewValuesToShowing(showing);
 
             //post the data change
-            ShowingController sc = new ShowingController();
+            ShowingController sc = new();
+            ShowingIndexForm iForm = new();
             
             if (await sc.UpdateShowing(showing.ShowingId, showing))
             {
+            
                 MessageBox.Show("The showing has been updated.");
-                this.Dispose();
                 
+                this.Dispose();
+                iForm.ShowDialog();
+
             }
         }
 
