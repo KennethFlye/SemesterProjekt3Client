@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 
 namespace SemesterProjekt3Client.GUI
 {
-    public partial class SpecificMovie : Form
+    public partial class SpecificMovieReal : Form
     {
         MovieInfo movie;
         MovieController mController;
         IEnumerable<MovieCopy> dbMovieCopies;
 
-        public SpecificMovie(MovieInfo movie)
+        public SpecificMovieReal(MovieInfo movie)
         {
             this.movie = movie;
             InitializeComponent();

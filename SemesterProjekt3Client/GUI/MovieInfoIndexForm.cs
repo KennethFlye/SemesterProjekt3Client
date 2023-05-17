@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace SemesterProjekt3Client
 {
-    public partial class Movies : Form
+    public partial class MovieInfoIndexForm : Form
     {
         MovieController mController;
         IEnumerable<MovieInfo> dbMovies;
-        public Movies()
+        public MovieInfoIndexForm()
         {
             InitializeComponent();
             mController = new MovieController();
@@ -94,7 +94,7 @@ namespace SemesterProjekt3Client
         {
             if(listBox1.SelectedItem != null)
             {
-                SpecificMovieReal specificMovieWindow = new SpecificMovieReal((MovieInfo)listBox1.SelectedItem);
+                SpecificMovie specificMovieWindow = new SpecificMovie((MovieInfo)listBox1.SelectedItem);
                 specificMovieWindow.ShowDialog();
             }
             

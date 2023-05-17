@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <Reference Include="dllMaker">
       <HintPath>bin\dllMaker.dll</HintPath>
     </Reference>

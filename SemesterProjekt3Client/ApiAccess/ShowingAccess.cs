@@ -114,6 +114,5 @@ namespace SemesterProjekt3Client.ApiAccess
             return false;
         }
 
-
     }
 }

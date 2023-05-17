@@ -12,10 +12,12 @@ namespace SemesterProjekt3Client.Controllers
     {
         MovieAccess mAccess;
 
+        
          public MovieController()
         {
             mAccess = new MovieAccess();
         }
+        
 
         public async Task<bool> AddMovieInfoAsync(MovieInfo movie)
         {
