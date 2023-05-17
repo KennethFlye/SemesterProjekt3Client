@@ -38,6 +38,7 @@
             this.checkBoxIsKidFriendly = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxMovieCopy = new System.Windows.Forms.ComboBox();
+            this.comboBoxShowRoom = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -127,11 +128,20 @@
             this.comboBoxMovieCopy.Size = new System.Drawing.Size(151, 28);
             this.comboBoxMovieCopy.TabIndex = 9;
             // 
+            // comboBoxShowRoom
+            // 
+            this.comboBoxShowRoom.FormattingEnabled = true;
+            this.comboBoxShowRoom.Location = new System.Drawing.Point(137, 152);
+            this.comboBoxShowRoom.Name = "comboBoxShowRoom";
+            this.comboBoxShowRoom.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxShowRoom.TabIndex = 10;
+            // 
             // SpecificShowing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 300);
+            this.Controls.Add(this.comboBoxShowRoom);
             this.Controls.Add(this.comboBoxMovieCopy);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBoxIsKidFriendly);
@@ -163,5 +173,6 @@
         private CheckBox checkBoxIsKidFriendly;
         private DateTimePicker dateTimePicker1;
         private ComboBox comboBoxMovieCopy;
+        private ComboBox comboBoxShowRoom;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SemesterProjekt3Client.GUI
 {
-    partial class SpecificMovie
+    partial class SpecificMovieReal
     {
         /// <summary>
         /// Required designer variable.

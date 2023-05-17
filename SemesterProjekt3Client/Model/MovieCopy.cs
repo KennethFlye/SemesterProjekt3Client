@@ -10,10 +10,7 @@
         public MovieInfo MovieType { get; set; }
 
         
-        public string ToString()
-        {
-            return $"{MovieType.Title} Language: {Language} 3D: {Is3D}";
-        }
+       
         public MovieCopy() { }
 
         public MovieCopy(int copyId, string language, bool is3D, double price, MovieInfo movieType)
