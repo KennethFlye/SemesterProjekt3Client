@@ -1,6 +1,8 @@
 using SemesterProjekt3Client.Controllers;
+using SemesterProjekt3Client.GUI;
 using SemesterProjekt3Client.Model;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace SemesterProjekt3Client
 {
@@ -59,8 +61,17 @@ namespace SemesterProjekt3Client
                 foreach (Showing? i in _showingList)
                 {
 
-                    showingsList.Items.Add(i.ToString());
+                    showingsList.Items.Add(i);
                 }
+            }
+        }
+
+        private void showingList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (showingsList.SelectedItem != null)
+            {
+                ShowingEditForm form = new ShowingEditForm((Showing)showingsList.SelectedItem);
+                form.ShowDialog();
             }
         }
 

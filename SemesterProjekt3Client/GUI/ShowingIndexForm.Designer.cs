@@ -1,5 +1,6 @@
 ﻿using SemesterProjekt3Client.Controllers;
 using SemesterProjekt3Client.Model;
+using System.Windows.Forms;
 
 namespace SemesterProjekt3Client
 {
@@ -33,10 +34,7 @@ namespace SemesterProjekt3Client
         {
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.titleLabel = new System.Windows.Forms.Label();
-            this.showingsList = new System.Windows.Forms.ListView();
-            this.Film = new System.Windows.Forms.ColumnHeader();
-            this.Sal = new System.Windows.Forms.ColumnHeader();
-            this.Tid = new System.Windows.Forms.ColumnHeader();
+            this.showingsList = new System.Windows.Forms.ListBox();
             this.createButton = new System.Windows.Forms.Button();
             this.movieComboBox = new System.Windows.Forms.ComboBox();
             this.kidCheckBox = new System.Windows.Forms.CheckBox();
@@ -60,17 +58,14 @@ namespace SemesterProjekt3Client
             // 
             // showingsList
             // 
-            this.showingsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Film,
-            this.Sal,
-            this.Tid});
+           
             this.showingsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem2});
             this.showingsList.Location = new System.Drawing.Point(46, 105);
             this.showingsList.Name = "showingsList";
             this.showingsList.Size = new System.Drawing.Size(530, 411);
             this.showingsList.TabIndex = 2;
-            this.showingsList.UseCompatibleStateImageBehavior = false;
+            this.showingsList.SelectedIndexChanged += showingList_SelectedIndexChanged;
             // 
             // createButton
             // 
@@ -196,7 +191,7 @@ namespace SemesterProjekt3Client
         #endregion
 
         private Label titleLabel;
-        private ListView showingsList;
+        private ListBox showingsList;
         private ColumnHeader Film;
         private ColumnHeader Sal;
         private ColumnHeader Tid;
