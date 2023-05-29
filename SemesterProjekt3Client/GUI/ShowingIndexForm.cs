@@ -98,7 +98,7 @@ namespace SemesterProjekt3Client
 
                 DateTime date = datePicker.Value;
                 DateTime time = timePicker.Value;
-                DateTime starttime = new DateTime(date.Year, date.Month, date.Month, time.Hour, time.Minute, time.Second);
+                DateTime starttime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
                 newShow.startTime = starttime;
                 newShow.ShowRoom = (ShowRoom)ShowRoomComboBox.SelectedItem;
